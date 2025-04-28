@@ -73,7 +73,7 @@ function login_(username, password){
 			    '--no-zygote',
 			    '--single-process', 
 			    '--disable-gpu'
-    			], headless: false});
+    			], headless: true});
     		const page = await browser.newPage();
     		 await page.setDefaultNavigationTimeout(0);
     		await page.goto('https://www.bidv.vn/iBank/MainEB.html', { waitUntil: 'networkidle0' })
