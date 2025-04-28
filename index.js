@@ -4,6 +4,8 @@ const puppeteer = require('puppeteer');
 const express = require('express')
 const axios = require('axios')
 const cheerio = require('cheerio');
+const cors = require('cors')
+
 var https = require('https');
 const axiosInstance = axios.create({
   httpsAgent: new https.Agent({
@@ -14,7 +16,9 @@ var fs = require('fs');
 const app = express()
 const bodyParser = require('body-parser')
 app.use(bodyParser.json());
+app.use(cors())
 const port = 27126
+
 
 
 function base64_encode(file) {
@@ -41,7 +45,7 @@ const resolveCaptcha = async (captcha) => {
 			    'Content-Type': 'application/json'
 			},
 			data: JSON.stringify({
-			  "key": "6f501531fc40dbd9eea1af373afc17ba",
+			  "key": "2b9b3456b77c59a4c57e0f45ea21dcee",
 			  "type": "imagetotext",
 			  "img": captcha,
 			  "module": "common",
